@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retraite</title>
+</head>
+
+<script>
+    let Retraite = {};
+
+    Retraite.secuPlafon = 78.05;
+    Retraite.secuDeplafon = 24.05;
+    Retraite.compleT1 = 30.08;
+    Retraite.compleT2 = 20.95;
+    Retraite.supple = 18.65;
+    Retraite.totalComplet =  function(compleT1, compleT2) {
+        console.log(arguments);
+        
+        let total = compleT1 + compleT2;
+
+        return total;
+    };
+
+    let total1 = Retraite.totalComplet(20.57, 65.87);
+    let total2 = Retraite.totalComplet(34.65, 29.45);
+
+    console.log("Le total numéro 1 : " + total1);
+    console.log("Le total numéro 2 : " + total2);
+    
+
+</script>
+
+<body>
+    
+</body>
+</html>

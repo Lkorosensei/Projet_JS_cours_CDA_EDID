@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employeur</title>
+    <script src="/js/prepositionGenre.js" defer></script>
+</head>
+
+<script>
+
+    let Employeur = {
+        raisonSociale: "GRETA",
+        adresseEmpl:"69 rue de l'industrie",
+        codePostalEmpl:"92700",
+        villeEmpl: "Colombes",
+        paysEmpl: "France",
+        codeAPE: "12540",
+        immatriculation: "AUZY8-SOFI8-55",
+        refEmpl: "25424",
+        siret: "542013782",
+        conventionCol: "Convention",
+        afficherEntreprise: function (raisonSociale,adresseEmpl,codePostalEmpl,villeEmpl,paysEmpl) {
+            console.log(arguments);
+            
+            let informationsEntreprise = `L'employeur est ${raisonSociale} localisé au ${adresseEmpl} à ${villeEmpl} ${codePostalEmpl} en ${paysEmpl}`;
+            //console.log(informationsEntreprise);
+            return informationsEntreprise
+        }
+    };
+
+    let entrep1 = Employeur.afficherEntreprise("Greta", "69 rue de l'industrie", "92700", "Colombes", "France");
+
+    console.log(entrep1);
+
+    // console.log(estUnPaysFeminin("France"));      
+    // console.log(estUnPaysFeminin("Canada"));      
+    // console.log(estUnPaysFeminin("Mexique"));     
+    // console.log(estUnPaysFeminin("Italie"));      
+    // console.log(estUnPaysFeminin("Cambodge"));
+
+    // console.log(estUnPaysMasculin("France"));      
+    // console.log(estUnPaysMasculin("Canada"));      
+    // console.log(estUnPaysMasculin("Mexique"));     
+    // console.log(estUnPaysMasculin("Italie"));      
+    // console.log(estUnPaysMasculin("Cambodge"));   
+
+</script>
+
+<body>
+    
+</body>
+</html>

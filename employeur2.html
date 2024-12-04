@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employeur 2 </title>
+    <script>
+            //Mon Objet Employeur en JS qui contient des attributs et une méthodes
+            // Constructeur pour créer des objets Employeur avec des attributs spécifiques
+        let Employeur =  function (p_raisonSociale, p_codeAPE, p_siret) {
+            this.raisonSociale = p_raisonSociale;
+            this.codeAPE = p_codeAPE;
+            this.siret = p_siret;
+            
+            // Méthode pour afficher les informations de l'employeur
+            this.afficheInfosEmpl = function () {
+                console.log(arguments);
+                
+                console.log(`Raison sociale : ${this.raisonSociale} , Code APE : ${this.codeAPE} , Siret : ${this.siret}`);
+                
+            };
+        };
+
+        let emp1 = new Employeur("Airbus", "123AF", 123456);
+        let emp2 = new Employeur("ATP", "129AE", 23456789);
+
+        emp1.afficheInfosEmpl();
+        emp2.afficheInfosEmpl();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

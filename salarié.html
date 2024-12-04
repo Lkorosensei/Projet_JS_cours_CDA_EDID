@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salarié</title>
+    <script>
+
+        let Salarié = function (p_nom,p_prenom,p_adresseSal,p_codePostalSal,p_villeSal,p_paysSal,p_numSecu,p_dateDebut,p_anciennete,p_posteOccupe,p_classification,p_categorie) {
+            this.nom = p_nom;
+            this.prenom = p_prenom;
+            this.adresseSal = p_adresseSal;
+            this.codePostalSal = p_codePostalSal;
+            this.villeSal = p_villeSal;
+            this.paysSal = p_paysSal;
+            /*
+            this.numSecu = p_numSecu;
+            this.dateDebut = p_dateDebut;
+            this.anciennete = p_anciennete;
+            this.posteOccupe = p_posteOccupe;
+            this.classification = p_classification;
+            this.categorie = p_categorie;
+            */
+
+            this.afficheInfoSal = function () {
+                console.log(arguments);
+
+                console.log(`Prénom : ${this.prenom} , Nom : ${this.nom} , Adresse : ${this.adresseSal} , Code Postal : ${this.codePostalSal} , Ville : ${this.villeSal} , Pays : ${this.paysSal}`);
+                /*, Numéro Sécurité Sociale : ${this.numSecu} , Date Début : ${this.dateDebut} , Anciennete : ${this.anciennete} , Poste Occupé : ${this.posteOccupe} , Classification : ${this.classification} et Catégorie : ${this.categorie}*/
+            };
+
+        };
+
+        console.log("Voici mon objet salarié : " + Salarié);
+        Salarié.fu
+        
+
+        let sal1 = new Salarié("Samir", "Ibrahim", "69 rue de l'industrie" , "92700" , "Colombes", "France", "10235867", "12/02/20", "4 ans", "Dev", "ingénieur", "informatique" )   
+        let sal2 = new Salarié("Samir", "Ibrahim", ) 
+
+        sal1.afficheInfoSal();
+        sal2.afficheInfoSal();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

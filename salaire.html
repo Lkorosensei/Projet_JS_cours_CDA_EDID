@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salaire</title>
+</head>
+
+<script>
+
+    let salaire = {
+        base:3000,     //Propriété du salaire de base
+        taux:0.08,     //Taux d'imposition
+        dateNetPaye: "12/04/2024",
+        congesPayes: 200,
+        montantSalaire: function(taux,base,congesPayes) {
+            console.log(arguments);
+
+            let montSal = base * taux + congesPayes;
+
+                return montSal;
+            
+        }
+
+    };
+
+    let salaire1 = salaire.montantSalaire(0.08,2500,300);
+    let salaire2 = salaire.montantSalaire(0.08,3500,400);
+    let salaire3 = salaire.montantSalaire(0.05,3500,400);
+
+    console.log("Le salaire 1 :" + salaire1);
+    console.log("Le salaire 2 :" + salaire2);
+    console.log("Le salaire 3 :" + salaire3);
+    
+    let impots = {}; //J'initialise mon objet vide
+    impots.netAvantImpot = 3000;
+    impots.baseImpot = 300;
+    impots.tauxPersImpot = 0.08;
+    impots.montantPrelevImpot = 230;
+    impots.totalVerseEmployeur = function (baseImpot,tauxPersImpot,montantPrelevImpot) {
+
+        let netAvImpot = baseImpot*tauxPersImpot;
+        let total = netAvImpot + montantPrelevImpot;
+
+        return total;
+    };
+
+    let tot1 = impots.totalVerseEmployeur(2500,0.08,300);
+    let tot2 = impots.totalVerseEmployeur(4500,0.08,500);
+
+    console.log("Le total versé 1 : " + tot1);
+    console.log("Le total versé 2 : " + tot2);
+    
+    
+</script>
+
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    // alert('Salarié');
+    console.log('Infos Salarié !');
+
+    let age=40;
+    let nom = "Dugary";
+    let prenom = "Laurent"; 
+    let Adresse = "";
+    let numSecu = "12345678 ";
+    let dateDebut = "03/12/2024";
+
+    // Tableau des informations du salarié
+    let salarieInfo = [nom, prenom, age, numSecu, dateDebut];
+
+    console.log(`L'age de ${nom} est de : ${age}`);
+    console.log("Le type de la var age est :" +typeof age);
+    console.log(`Son numéro de sécu est : ${numSecu}`);
+    console.log(`Le type de la var ${numSecu} est :` +typeof numSecu);
+    console.log(`Le type de la var dateDebut est :` +typeof dateDebut);
+    console.log(salarieInfo);
+
+    // Je change la valeur de Laurent en Christophe
+    salarieInfo[1]= "Christophe";
+    console.log(salarieInfo);
+
+    // J'ajoute un salaire de 3000e à Christophe
+    salarieInfo[8] = 3000 + " euro"
+    console.log(salarieInfo);
+    
+    // Tableau de tableaux
+    let sal1 = ["Ibrahim", "SAMIR", 20 + "ans", "1040638053095", "04/10/2024", 3000 + " euro"];
+    let sal2 = ["Youssef", "BEN", 28 + "ans", "1040678247895", "13/04/2021", 2890 + " euro"];
+    let sal3 = ["Robert", "Krak3n", 42 + "ans", "1057824569852", "17/09/2019", 4000 + " euro"];
+    let sal4 = ["Pierre", "Xin", 25 + "ans", "1042578952645", "29/03/2022", 2900 + " euro"];
+    
+    let listeSalarie = [sal1,sal2,sal3,sal4];
+    console.log(listeSalarie);
+    console.log("Le salaire de Ibrahim est :" + listeSalarie[0][5]);
+    console.log("L'age de Krak3n est :" + listeSalarie[2][2]);
+    
+    
+    function montant(taux,base) {
+        console.log(arguments);
+        
+        let mont = taux*base;
+        return mont
+    }
+    //console.log("voir ma variable mont local hors fonction :"+ mont);
+    
+    
+
+    // Test le montant
+    function testMontant(taux,base) {
+        console.log(arguments);
+        if (!isNaN(taux) && !isNaN(base)) {
+            var mont = taux * base;
+        } else mont = "Entrez des nombres !!";
+
+        return mont;
+    }
+
+    const result = montant(0.08,3000,listeSalarie[0][0],listeSalarie[0][1]);
+    const result1 = montant(0.08,2000,listeSalarie[1][0],listeSalarie[1][1]);
+    const result2 = testMontant("Ben","Youssef",listeSalarie[1][0],listeSalarie[1][1]);
+    const result3 = testMontant(0.08,3500,listeSalarie[1][0],listeSalarie[1][1]);
+
+    console.log("Le montant est : " + result + "euro");
+    console.log("Le montant est : " + result1 + "euro");
+    console.log("Le montant est : " + result2);
+    console.log("Le montant est : " + result3);
+       
+    //Je vais créer un objet et une méthode qui affiches les informations du salarié
+    let infoSalarie = {
+        nom: "Petit",
+        prenom: "Adam",
+        age: 22,
+        numSecu: "12345678",
+        dateDebut:"12/11/2024",
+        afficheInfos: function () {
+            console.log(arguments);
+
+            console.log("Méthode 1 : Nom : "+this.nom+" , Prénom : "+this.prenom+" , Age : "+this.age+" , Numero de Sécurité Sociale : "+this.numSecu+" , Date de début : "+this.dateDebut);
+            //console.log(`Méthode 2 : Nom : ${this.nom} , Prénom : ${this.prenom} , Age : ${this.age} , Numero de Sécurité Sociale : ${this.numSecu} , Date de début : ${this.dateDebut}`);
+            
+        }
+    };
+    infoSalarie.afficheInfos();
+
+</script>
+
+<body>
+    <div id="mon_id" class="panel">
+        <ul>
+            <li>ID Salarié</li>
+            <li>Nom :</li>
+            <li>Prénom :</li>
+            <li>Adresse :</li>
+            <li>Code Postal :</li>
+            <li>Ville :</li>
+            <li>Pays :</li>
+            <li>numSecu :</li>
+            <li>dateDebut :</li>
+            <li>ancienneté :</li>
+        </ul>
+    </div>
+</body>
+
+
+</html>

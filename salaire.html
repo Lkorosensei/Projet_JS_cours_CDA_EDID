@@ -50,11 +50,32 @@
 
     console.log("Le total versé 1 : " + tot1);
     console.log("Le total versé 2 : " + tot2);
-    
+
+     //doClick()
+     function doClick(e) {
+        console.dir(e);
+       console.log("onClick");
+        
+    }
+
+    // //doChange()
+    // function doChange(e) {
+    //     console.dir(e);
+    //     console.log("onChange");
+        
+    // }
+
+    function doClickDiv(e) {
+        console.log("click div");
+        console.dir(e);
+    }
     
 </script>
 
 <body>
-    
+    <div onclick="doClickDiv(event)">
+        <input type="button" onclick="doClick(event)" value="OK">
+        <!-- <input type="text" onchange="doChange(event)"> -->
+    </div>
 </body>
 </html>

@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employeur 2 </title>
     <script>
+        //Utilisation de l'objet Window
+        let innerH = window.innerHeight;
+        let innerW = window.innerWidth;
+
+        console.log(innerH + " * " + innerW);
+        console.log(window.document);
+        
+        
+
             //Mon Objet Employeur en JS qui contient des attributs et une méthodes
             // Constructeur pour créer des objets Employeur avec des attributs spécifiques
         let Employeur =  function (p_raisonSociale, p_codeAPE, p_siret) {
@@ -26,10 +35,46 @@
 
         emp1.afficheInfosEmpl();
         emp2.afficheInfosEmpl();
+        window.onload = function() {
+            let btn_submit = document.getElementById('btn_submit');
+            btn_submit.onclick = function() {
+                console.dir(document.forms);
+
+                console.log(document.forms[0].elements.txt_raisonSociale.value);// 1ere methode
+                console.log(document.forms[0].elements['txt_codeAPE'].value); //2eme methode
+                console.log(document.forms[0].elements[2].value); //3eme methode
+                console.log(document.forms[0].elements.email.value);
+                console.log(document.forms[0].elements.chk_yes.checked);               
+            }
+        }
 
     </script>
 </head>
 <body>
-    
+    <form class="" action="index.html" method="post" name="employeur_FormName">
+
+        Raison sociale : <input type="text" name="txt_raisonSociale" placeholder="Airbus"><br>
+        Code APE : <input type="text" name="txt_codeAPE" placeholder="123PA"><br>
+        Siret : <input type="text" name="txt_siret" placeholder="124567"><br>
+        Email : <input type="email" name="email" placeholder="commercial@airbus.com"><br>
+        Soumis TVA(YES/NO) : <input type="checkbox" name="chk_yes" checked="checked"><br>
+        <input type="button" name="btn_form" value="Envoyer" id="btn_submit"><br>
+        <!-- <input type="" name="" value=""><br>
+        <input type="" name="" value=""><br>
+        <input type="" name="" value=""><br> -->
+    </form>
+    <script type="text/javascript">
+        let form = window.document.forms['employeur_FormName'];
+        let txt_raisonSociale = form.txt_raisonSociale;
+        let txt_siret = form.txt_siret;
+        let txt_codeAPE = form.txt_codeAPE;
+        let chk_yes = form.chk_yes;
+
+        console.dir(txt_raisonSociale.value);
+        console.dir(txt_siret.value);
+        console.dir(txt_codeAPE.value);
+        console.dir(chk_yes.checked);
+        
+    </script>
 </body>
 </html>

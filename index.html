@@ -94,9 +94,31 @@
     };
     infoSalarie.afficheInfos();
 
+
+    //Amélioration des objets en JS
+    Array.prototype.showAllSalaries = function() {
+
+        for(var i=0; i <= this.length-1; i++){
+            console.log('['+i+']',this[i]);
+            
+        }
+    }
+
+    // Création d'un tableau 
+    var tabSalarie = [sal1,sal2,sal3,sal4]
+    tabSalarie.showAllSalaries();
 </script>
 
 <body>
+    <h1 id="le_titre">Index</h1>
+
+    <script type="text/javascript">
+        let le_titre = document.getElementById("le_titre");
+        console.log(le_titre.innerHTML);
+        //console.dir(le_titre);
+        
+    </script>
+
     <div id="mon_id" class="panel">
         <ul>
             <li>ID Salarié</li>
